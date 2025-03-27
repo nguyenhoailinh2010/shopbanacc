@@ -1,0 +1,158 @@
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    width: 400px;
+    max-width: 90%;
+    position: relative;
+}
+
+.product-modal-content {
+    width: 700px;
+    max-width: 90%;
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #aaa;
+}
+
+.close:hover {
+    color: #333;
+}
+
+.modal h2 {
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.modal form button {
+    width: 100%;
+    padding: 12px;
+    background: #ff6b6b;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.modal form button:hover {
+    background: #ff5252;
+}
+
+.modal p {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.modal p a {
+    color: #ff6b6b;
+    text-decoration: underline;
+}
+
+/* Product Details in Modal */
+#product-details {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.product-detail-image {
+    flex: 1;
+    min-width: 250px;
+    margin-right: 20px;
+}
+
+.product-detail-image img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.product-detail-info {
+    flex: 1;
+    min-width: 250px;
+}
+
+.product-detail-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.product-detail-price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ff6b6b;
+    margin-bottom: 15px;
+}
+
+.product-detail-description {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.product-detail-actions button {
+    padding: 10px 20px;
+    background: #ff6b6b;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.product-detail-actions button:hover {
+    background: #ff5252;
+}
+
+/* Responsive Design for Modals */
+@media (max-width: 768px) {
+    .product-detail-image {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    
+    #product-details {
+        flex-direction: column;
+    }
+}
