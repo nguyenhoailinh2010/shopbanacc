@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blox Fruit Shop - Trang chủ</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Blox Fruit Shop</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Trang chủ</a></li>
+                    <li><a href="#accounts">Tài khoản</a></li>
+                    <li><a href="#services">Dịch vụ</a></li>
+                    <li><a href="#about">Giới thiệu</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <div id="user-info" class="hidden">
+                    <span id="username-display">User</span>
+                    <button id="logout-btn">Đăng xuất</button>
+                </div>
+                <div id="auth-buttons">
+                    <button id="login-btn">Đăng nhập</button>
+                    <button id="register-btn">Đăng ký</button>
+                </div>
+                <div class="cart">
+                    <a href="#cart" id="cart-icon"><i class="fas fa-shopping-cart"></i> <span id="cart-count">0</span></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Chào mừng đến với Blox Fruit Shop</h2>
+                <p>Nơi cung cấp tài khoản và dịch vụ Blox Fruit chất lượng cao, uy tín</p>
+                <a href="#products" class="btn">Xem sản phẩm</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="products" class="products">
+        <div class="container">
+            <h2 class="section-title">Sản phẩm nổi bật</h2>
+            <div class="product-categories">
+                <button class="category-btn active" data-category="all">Tất cả</button>
+                <button class="category-btn" data-category="accounts">Tài khoản</button>
+                <button class="category-btn" data-category="fruits">Trái ác quỷ</button>
+                <button class="category-btn" data-category="services">Dịch vụ</button>
+            </div>
+            <div class="product-grid" id="product-grid">
+                <!-- Sản phẩm sẽ được thêm bằng JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <section id="accounts" class="accounts">
+        <div class="container">
+            <h2 class="section-title">Tài khoản Blox Fruit</h2>
+            <div class="account-grid">
+                <!-- Tài khoản sẽ được thêm bằng JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Dịch vụ Blox Fruit</h2>
+            <div class="service-grid">
+                <!-- Dịch vụ sẽ được thêm bằng JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">Về chúng tôi</h2>
+            <div class="about-content">
+                <p>Blox Fruit Shop là nơi cung cấp tài khoản và dịch vụ Blox Fruit uy tín, chất lượng. Chúng tôi cam kết mang đến trải nghiệm mua sắm tốt nhất cho người chơi Blox Fruit.</p>
+                <p>Với nhiều năm kinh nghiệm trong lĩnh vực game, chúng tôi tự hào là đối tác tin cậy của hàng nghìn game thủ.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="cart" class="cart-section hidden">
+        <div class="container">
+            <h2 class="section-title">Giỏ hàng của bạn</h2>
+            <div id="cart-items">
+                <!-- Sản phẩm trong giỏ hàng sẽ được thêm bằng JavaScript -->
+            </div>
+            <div class="cart-total">
+                <h3>Tổng cộng: <span id="cart-total-price">0</span> VNĐ</h3>
+                <button id="checkout-btn" class="btn">Thanh toán</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal đăng nhập -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Đăng nhập</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="login-username">Tên đăng nhập:</label>
+                    <input type="text" id="login-username" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Mật khẩu:</label>
+                    <input type="password" id="login-password" required>
+                </div>
+                <button type="submit" class="btn">Đăng nhập</button>
+            </form>
+            <p>Chưa có tài khoản? <a href="#" id="switch-to-register">Đăng ký ngay</a></p>
+        </div>
+    </div>
+
+    <!-- Modal đăng ký -->
+    <div id="register-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Đăng ký</h2>
+            <form id="register-form">
+                <div class="form-group">
+                    <label for="register-username">Tên đăng nhập:</label>
+                    <input type="text" id="register-username" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-email">Email:</label>
+                    <input type="email" id="register-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-password">Mật khẩu:</label>
+                    <input type="password" id="register-password" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-confirm-password">Xác nhận mật khẩu:</label>
+                    <input type="password" id="register-confirm-password" required>
+                </div>
+                <button type="submit" class="btn">Đăng ký</button>
+            </form>
+            <p>Đã có tài khoản? <a href="#" id="switch-to-login">Đăng nhập</a></p>
+        </div>
+    </div>
+
+    <!-- Modal chi tiết sản phẩm -->
+    <div id="product-modal" class="modal">
+        <div class="modal-content product-modal-content">
+            <span class="close">&times;</span>
+            <div id="product-details">
+                <!-- Chi tiết sản phẩm sẽ được thêm bằng JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>Blox Fruit Shop</h3>
+                    <p>Cung cấp tài khoản và dịch vụ Blox Fruit uy tín</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Liên kết nhanh</h4>
+                    <ul>
+                        <li><a href="#home">Trang chủ</a></li>
+                        <li><a href="#accounts">Tài khoản</a></li>
+                        <li><a href="#services">Dịch vụ</a></li>
+                        <li><a href="#about">Giới thiệu</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Liên hệ</h4>
+                    <p><i class="fas fa-envelope"></i> Email: contact@bloxfruitshop.com</p>
+                    <p><i class="fas fa-phone"></i> Điện thoại: 0123 456 789</p>
+                    <div class="social-media">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-discord"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Blox Fruit Shop. Tất cả quyền được bảo lưu.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/auth.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
